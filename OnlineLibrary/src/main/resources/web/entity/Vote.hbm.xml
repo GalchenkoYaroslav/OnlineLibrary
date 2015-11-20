@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jul 5, 2013 2:59:07 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class catalog="library" name="library.web.entity.Vote" table="vote">
+    <id name="id" type="java.lang.Long">
+      <column name="id"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="library.web.entity.Book" fetch="select" name="book">
+      <column name="book_id" not-null="true"/>
+    </many-to-one>
+    <property name="value" type="java.lang.Integer">
+      <column name="value"/>
+    </property>
+    <property name="username" type="string">
+      <column length="100" name="username" not-null="true"/>
+    </property>
+  </class>
+</hibernate-mapping>
